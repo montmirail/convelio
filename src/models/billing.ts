@@ -1,4 +1,4 @@
-export interface Billing {
+export interface IBilling {
   billingCompanyName?: string;
   billingCompanyEori?: string;
   billingCompanyVat?: string;

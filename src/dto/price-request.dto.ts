@@ -1,9 +1,9 @@
 import {Pickup} from '../models/pickup';
 import {Delivery} from '../models/delivery';
-import {Billing} from '../models/billing';
+import {IBilling} from '../models/billing';
 
 export interface PriceRequestDto {
   pickup: Pickup;
   deliveryProfile: Delivery;
-  billing: Billing;
+  billing: IBilling;
 }
