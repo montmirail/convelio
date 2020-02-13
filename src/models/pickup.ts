@@ -1,4 +1,4 @@
-import {Package} from './package';
+import { Package } from './package';
 
 export interface Pickup {
   currencyCode: number;

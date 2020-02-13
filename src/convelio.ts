@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {PriceRequestDto} from './dto/price-request.dto';
-import {CalculateResponse} from './models/calculate-response';
+import { PriceRequestDto } from './dto/price-request.dto';
+import { CalculateResponse } from './models/calculate-response';
 
 export class Convelio {
   apiKey: string;
@@ -12,18 +12,17 @@ export class Convelio {
   }
 
   calculate(input: PriceRequestDto): Promise<CalculateResponse> {
-    return this.sendRequest(this.calculatePriceUrl, input)
-      .then(({ data }) => {
-        if(data.err !== 0) {
-          throw new Error(data.err.msg);
-        }
+    return this.sendRequest(this.calculatePriceUrl, input).then(({ data }) => {
+      if (data.err !== 0) {
+        throw new Error(data.err.msg);
+      }
 
-        return data.data;
-      });
+      return data.data;
+    });
   }
 
   placeShippingOrder(): Promise<any> {
-    return this.sendRequest(this.placeOrderUrl, {})
+    return this.sendRequest(this.placeOrderUrl, {});
   }
 
   private sendRequest(url: string, data: any): Promise<any> {
@@ -31,7 +30,7 @@ export class Convelio {
       headers: {
         'Accept-Encoding': 'gzip, deflate',
         'Content-Type': 'application/json; charset=utf-8',
-      }
+      },
     });
   }
 
