@@ -1,15 +1,15 @@
 import {Package} from './package';
 
 export interface Pickup {
-  currencyCode: string;
-  suggestVatRate: string;
-  pickupCompanyName: string;
-  pickupCompanyEori: string;
-  pickupCompanyVat: string;
-  pickupContactFirstname: string;
-  pickupContactLastname: string;
-  pickupEmail: string;
-  pickupPhone: string;
+  currencyCode: number;
+  suggestVatRate: number;
+  pickupCompanyName?: string;
+  pickupCompanyEori?: string;
+  pickupCompanyVat?: string;
+  pickupContactFirstname?: string;
+  pickupContactLastname?: string;
+  pickupEmail?: string;
+  pickupPhone?: string;
   pickupStreet: string;
   pickupStreetMore: string;
   pickupPostcode: string;
@@ -17,13 +17,13 @@ export interface Pickup {
   pickupCity: string;
   pickupCountryIso2: string;
   pickupCountry: string;
-  metric: string;
+  metric: number;
   packingType: string;
-  hasPersonalInsurance: string;
+  hasPersonalInsurance: boolean;
   deliveryMethod: string;
-  iframePriceLabel: string;
-  iframePriceModify: string;
-  description: string;
-  commercialValue: string;
+  iframePriceLabel?: string;
+  iframePriceModify?: string;
+  description?: string;
+  commercialValue?: string;
   packages: Package[];
 }
