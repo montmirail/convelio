@@ -1,6 +1,6 @@
 {
   "name": "convelio",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "JS library for convelio api",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
