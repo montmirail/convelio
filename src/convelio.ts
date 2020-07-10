@@ -1,4 +1,4 @@
-import axios, {AxiosResponse} from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { PriceRequestDto } from './dto/price-request.dto';
 import { CalculateResponse } from './models/calculate-response';
 
@@ -12,16 +12,15 @@ export class Convelio {
   }
 
   calculate(input: PriceRequestDto): Promise<CalculateResponse> {
-    return this.sendRequest(this.calculatePriceUrl, input)
-      .then(({ data }) => {
-        console.log(data);
+    return this.sendRequest(this.calculatePriceUrl, input).then(({ data }) => {
+      console.log(data);
 
-        if (data.err !== 0) {
-          throw new Error(data.err);
-        }
+      if (data.err !== 0) {
+        throw new Error(data.err);
+      }
 
-        return data.data;
-      });
+      return data.data;
+    });
   }
 
   placeShippingOrder(): Promise<any> {
